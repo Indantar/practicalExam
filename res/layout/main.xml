@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+                android:background="#006600"
+                android:id="@+id/mainAct">
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activity1"
+            android:id="@+id/activity1Btn" android:layout_below="@+id/textField1" android:layout_alignParentStart="true"
+            android:onClick="onClick1"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textField1" android:layout_alignParentTop="true" android:layout_alignParentStart="true"
+            android:width="250dp" android:background="#000000"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textField2"
+            android:width="250dp" android:background="#000000" android:layout_above="@+id/activity2Btn"
+            android:layout_alignParentStart="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activity2"
+            android:id="@+id/activity2Btn" android:layout_centerVertical="true" android:layout_alignParentStart="true"
+            android:onClick="onClickActivity2"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textField3"
+            android:background="#000000" android:width="250dp" android:layout_above="@+id/activity3Btn"
+            android:layout_alignParentStart="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activity3"
+            android:id="@+id/activity3Btn" android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" android:layout_marginBottom="98dp"
+            android:onClick="onClickActivity3"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/num1editText" android:layout_above="@+id/textField2" android:layout_alignParentStart="true"
+            android:width="50dp" android:background="#999999"/>
+    <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/num2editText2"
+              android:width="50dp"
+              android:background="#999999"
+              android:layout_alignTop="@+id/num1editText" android:layout_toEndOf="@+id/num1editText"/>
+    <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/num3editText3"
+              android:width="50dp"
+              android:background="#999999" android:layout_above="@+id/textField2"
+              android:layout_toEndOf="@+id/num2editText2"/>
+    <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/num4editText4"
+              android:width="50dp"
+              android:background="#999999" android:layout_above="@+id/textField2"
+              android:layout_toEndOf="@+id/num3editText3"/>
+    <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/num5editText5"
+              android:width="50dp"
+              android:background="#999999" android:layout_above="@+id/textField2"
+              android:layout_toEndOf="@+id/num4editText4"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText" android:layout_above="@+id/textField3" android:layout_alignParentStart="true"
+            android:width="50dp" android:background="#999999"/>
+    <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/editText2"
+              android:width="50dp"
+              android:background="#999999" android:layout_above="@+id/textField3"
+              android:layout_toEndOf="@+id/editText"/>
+    <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/editText3"
+              android:width="50dp"
+              android:background="#999999" android:layout_above="@+id/textField3"
+              android:layout_alignStart="@+id/num3editText3"/>
+    <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/editText4"
+              android:width="50dp"
+              android:background="#999999" android:layout_above="@+id/textField3"
+              android:layout_toEndOf="@+id/editText3"/>
+    <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/editText5"
+              android:width="50dp"
+              android:background="#999999" android:layout_above="@+id/textField3"
+              android:layout_alignStart="@+id/num5editText5"/>
+</RelativeLayout>
+

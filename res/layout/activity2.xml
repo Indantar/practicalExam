@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:background="#006600">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/maxVal"
+            android:background="#000000" android:width="250dp" android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/minVal"
+            android:width="250dp" android:background="#550055" android:layout_below="@+id/maxVal"
+            android:layout_alignParentEnd="true"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sumVal" android:layout_below="@+id/minVal" android:layout_alignStart="@+id/minVal"
+            android:background="#668833" android:autoText="true" android:width="250dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max"
+            android:id="@+id/maxValTxt" android:layout_above="@+id/minVal" android:layout_alignParentStart="true"
+            android:width="100dp" android:background="#000000"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Min"
+            android:id="@+id/minValTxt" android:layout_above="@+id/sumVal" android:layout_alignParentStart="true"
+            android:width="100dp" android:background="#550055"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sum"
+            android:id="@+id/sumValTxt" android:layout_alignBottom="@+id/sumVal" android:layout_alignParentStart="true"
+            android:background="#668833" android:width="100dp"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:id="@+id/bckBtn" android:layout_below="@+id/sumValTxt" android:layout_alignParentStart="true"
+            android:onClick="onClickActivity1Back"/>
+</RelativeLayout>
