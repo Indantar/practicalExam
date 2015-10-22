@@ -42,7 +42,8 @@ public class activity1 extends Activity {
             int num3 = recievedData.getInt("number3");
             int num4 = recievedData.getInt("number4");
             int num5 = recievedData.getInt("number5");
-            int[] nums = {num1,num2,num3,num4,num5};
+            //int[] nums = {num1,num2,num3,num4,num5};
+            int[] nums = recievedData.getIntArray("nums");
             int max = 0,min = 5000,sum = 0;
             for(int y = 0; y < 4; y ++) {
                 sum = sum + nums[y];

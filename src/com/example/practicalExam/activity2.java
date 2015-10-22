@@ -36,13 +36,13 @@ public class activity2 extends Activity {
             txtFieldSumT = (TextView) findViewById(R.id.sumValTxt);
             back = (Button) findViewById(R.id.bckBtn);
 
-            Intent IntentHandler = getIntent();
-            Bundle recievedData = IntentHandler.getExtras();
+            Intent IntentHandler2 = getIntent();
+            Bundle recievedData = IntentHandler2.getExtras();
 
             int reqCodeR = recievedData.getInt("requestCode1");
-            int[] numsRecieved = recievedData.getIntArray("numbersArray");
-            int max = 0,min = 5000,sum = 0;
-            for( int x = 0; x < numsRecieved.length;x++)
+            double[] numsRecieved = recievedData.getDoubleArray("numbersArray");
+            double max = 0,min = 5000,sum = 0;
+            for( int x = 0; x < 4;x++)
             {
                 sum = sum + numsRecieved[x];
                 if(numsRecieved[x] > max)
@@ -50,15 +50,16 @@ public class activity2 extends Activity {
                 if (numsRecieved[x] < min)
                     min = numsRecieved[x];
             }
-            recievedData.putInt("max",max);
-            recievedData.putInt("min",min);
-            recievedData.putInt("sum",sum);
-            IntentHandler.putExtras(recievedData);
-            txtFieldSum.append(""+recievedData.getInt("sum"));
-            txtFieldMin.append(""+recievedData.getInt("min"));
-            txtFieldMax.append(""+recievedData.getInt("max"));
+            recievedData.putDouble("max", max);
+            recievedData.putDouble("min", min);
+            recievedData.putDouble("sum", sum);
+            IntentHandler2.putExtras(recievedData);
 
-            setResult(Activity.RESULT_OK, IntentHandler);
+            txtFieldSum.append(""+recievedData.getDouble("sum"));
+            txtFieldMin.append(""+recievedData.getDouble("min"));
+            txtFieldMax.append(""+recievedData.getDouble("max"));
+
+            setResult(Activity.RESULT_OK, IntentHandler2);
         }
         catch(Exception e){
             Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_LONG).show();

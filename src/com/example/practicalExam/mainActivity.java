@@ -47,6 +47,11 @@ public class mainActivity extends Activity {
             btnActivity2 = (Button) findViewById(R.id.activity2Btn);
             txtField3 = (TextView) findViewById(R.id.textField3);
             btnActivity3 = (Button) findViewById(R.id.activity3Btn);
+            num1Ac2 = (EditText) findViewById(R.id.num1editText);
+            num2Ac2 = (EditText) findViewById(R.id.num2editText2);
+            num3Ac2 = (EditText) findViewById(R.id.num3editText3);
+            num4Ac2 = (EditText) findViewById(R.id.num4editText4);
+            num5Ac2 = (EditText) findViewById(R.id.num5editText5);
             num1Ac3 = (EditText) findViewById(R.id.editText);
             num2Ac3 = (EditText) findViewById(R.id.editText2);
             num3Ac3 = (EditText) findViewById(R.id.editText3);
@@ -63,12 +68,14 @@ public class mainActivity extends Activity {
         try {
             Intent i = new Intent(mainActivity.this, activity1.class);
             Bundle numbers1 = new Bundle();
+            int[] nums = {100,356,1587,4589,3300};
             numbers1.putInt("requestCode1", REQ);
             numbers1.putInt("number1", 100);
             numbers1.putInt("number2", 356);
             numbers1.putInt("number3", 1587);
             numbers1.putInt("number4", 4589);
             numbers1.putInt("number5", 3300);
+            numbers1.putIntArray("nums",nums);
             i.putExtras(numbers1);
             startActivityForResult(i, REQ);
         }
@@ -82,18 +89,18 @@ public class mainActivity extends Activity {
     public void onClickActivity2(View v)
     {
         try {
-            Intent i2 = new Intent(mainActivity.this, activity1.class);
+            Intent i2 = new Intent(mainActivity.this, activity2.class);
             Bundle numbers1 = new Bundle();
-            int[] nums = {Integer.parseInt(num1Ac2.getText().toString())
-                    ,Integer.parseInt(num1Ac2.getText().toString())
-                    ,Integer.parseInt(num1Ac2.getText().toString())
-                    ,Integer.parseInt(num1Ac2.getText().toString())
-                    ,Integer.parseInt(num1Ac2.getText().toString())};
+            double n1 = Double.parseDouble(num1Ac2.getText().toString());
+            double n2 = Double.parseDouble(num2Ac2.getText().toString());
+            double n3 = Double.parseDouble(num3Ac2.getText().toString());
+            double n4 = Double.parseDouble(num4Ac2.getText().toString());
+            double n5 = Double.parseDouble(num5Ac2.getText().toString());
+            double[] nums = {n1,n2,n3,n4,n5};
             numbers1.putInt("requestCode1", REQ2);
-            numbers1.putIntArray("numbersArray",nums);
+            numbers1.putDoubleArray("numbersArray", nums);
             i2.putExtras(numbers1);
-            System.out.println(nums);
-            startActivityForResult(i2, REQ2);
+            startActivityForResult(i2,REQ2);
         }
         catch (Exception e) {
             Toast.makeText(getBaseContext(), e.getMessage(),
@@ -107,14 +114,13 @@ public class mainActivity extends Activity {
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             Bundle numbers1 = new Bundle();
             int[] nums = {Integer.parseInt(num1Ac2.getText().toString())
-                    ,Integer.parseInt(num1Ac2.getText().toString())
-                    ,Integer.parseInt(num1Ac2.getText().toString())
-                    ,Integer.parseInt(num1Ac2.getText().toString())
-                    ,Integer.parseInt(num1Ac2.getText().toString())};
+                    ,Integer.parseInt(num2Ac3.getText().toString())
+                    ,Integer.parseInt(num3Ac3.getText().toString())
+                    ,Integer.parseInt(num4Ac3.getText().toString())
+                    ,Integer.parseInt(num5Ac3.getText().toString())};
             numbers1.putInt("requestCode1", REQ3);
             numbers1.putIntArray("numbersArray",nums);
             intent.putExtras(numbers1);
-            System.out.println(nums);
             startActivityForResult(intent, REQ3);
         }
         catch(Exception e)
@@ -123,6 +129,8 @@ public class mainActivity extends Activity {
                     Toast.LENGTH_LONG).show();
         }
     }
+
+    @Override
     protected void onActivityResult(int reqCode,int resultCode, Intent data)
     {
         super.onActivityResult(reqCode, resultCode, data);
@@ -143,9 +151,9 @@ public class mainActivity extends Activity {
                 if(resultCode == Activity.RESULT_OK)
                 {
                     Bundle returnNumbers2 = data.getExtras();
-                    int max = returnNumbers2.getInt("max");
-                    int min = returnNumbers2.getInt("min");
-                    int sum = returnNumbers2.getInt("sum");
+                    double max = returnNumbers2.getDouble("max");
+                    double min = returnNumbers2.getDouble("min");
+                    double sum = returnNumbers2.getDouble("sum");
                     txtField2.setText("Max:"+max+" Min:"+min+" Sum:"+sum);
                 }
             }
